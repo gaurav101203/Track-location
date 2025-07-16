@@ -2,12 +2,13 @@ from flask import Flask, request, jsonify
 from flask_pymongo import PyMongo
 from flask_cors import CORS
 from datetime import datetime, timedelta, timezone
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 # MongoDB URI (no specific DB to allow dynamic per-user DB selection)
-app.config["MONGO_URI"] = "your mongodb connection string"
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 try:
