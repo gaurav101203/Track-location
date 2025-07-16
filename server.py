@@ -7,8 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # MongoDB URI (no specific DB to allow dynamic per-user DB selection)
-app.config["MONGO_URI"] = "mongodb+srv://gaurav:qweasd147258@cluster0.if4ft.mongodb.net/?retryWrites=true&w=majority"
-
+app.config["MONGO_URI"] = "your mongodb connection string"
 mongo = PyMongo(app)
 
 try:
